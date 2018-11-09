@@ -14,6 +14,7 @@ module.exports.valid = function(url, payload) {
 				&& payload.films !== undefined && payload.liked !== undefined
 				&& payload.photo !== undefined)
 			{
+				console.log("valid");
 				if ((payload.liked > 0 || payload.liked === null)
 					&& (payload.films > 0 || payload.films === null))
 				{

@@ -39,7 +39,7 @@ router.get('/read/:id', (req, res) =>
 router.post('/create', (req, res) => {
 	console.log("create "+req.body.name);
 	logger.log(`${req.url.toString() + " " + req.body}\n`);
-	console.log('ok01');
+	//console.log(req.body);
 	let reqs = req.body;
 	createActor(req, res, reqs, (err, result) =>
 	{
@@ -56,8 +56,9 @@ router.post('/create', (req, res) => {
 
 router.post('/update', (req, res) => {
 	logger.log(`${req.url.toString() + " " + req.body}\n`);
-	req = req.body;
-	updateActor(req, res, payload, (err, result) =>
+	let reqs = req.body;
+	console.log(req);
+	updateActor(req, res, reqs, (err, result) =>
 	{
 		if (err)
 		{
@@ -72,8 +73,8 @@ router.post('/update', (req, res) => {
 
 router.post('/delete', (req, res) => {
 	logger.log(`${req.url.toString() + " " + req.body}\n`);
-	req = req.body;
-	deleteActor(req, res, req, (err, result) =>
+	let reqs = req.body;
+	deleteActor(req, res, reqs, (err, result) =>
 	{
 		if (err)
 		{

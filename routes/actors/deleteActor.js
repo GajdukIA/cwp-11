@@ -4,7 +4,7 @@ const fs = require('fs');
 const ErrorObject = { code: 400, message: 'Invalid request' };
 
 module.exports.deleteActor = function(req, res, payload, cb) {
-	if (valid.valid(req.url, payload))
+	if (valid.valid('/api/actors/delete', payload))
 	{
 		let deletedActorId = payload.id;
 		let deletedActorI = -1;

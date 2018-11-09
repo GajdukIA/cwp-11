@@ -4,14 +4,17 @@ const fs = require('fs');
 const ErrorObject = { code: 400, message: 'Invalid request' };
 
 module.exports.createActor = function(req, res, payload, cb) {
-	if (valid.valid(req.url, payload)) {
+    console.log(req.url);
+	if (valid.valid("/api/actors/create", payload)) {
 		//console.log(JSON.parse(payload));
 		let manyId = [];
-		let act=JSON.parse(actors);
-		console.log('ok1');
+		//console.log(actors);
+		let act=actors;
+
 		act.forEach((actor) =>
 		{
 			manyId.push(actor.id);
+			//console.log(actor.id);
 		});
 		console.log('ok');
 		payload.id = Math.max.apply(null, manyId) + 1;
