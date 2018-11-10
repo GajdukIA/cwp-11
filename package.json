@@ -1,6 +1,6 @@
 {
-  "name": "cwp-10",
-  "author": "Andrei Chayeuski",
+  "name": "cwp-11",
+  "author": "Igor Gajduk",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4"
